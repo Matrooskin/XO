@@ -19,6 +19,7 @@ class DariusKPlayer implements PlayerInterface
     public function turn($table, $symbol = self::SYMBOL_X)
     {
         $this->table = $table;
+        $this->turn = null;
         if ($symbol === self::SYMBOL_X) {
             $this->opponentSymbol = self::SYMBOL_O;
         } else {
@@ -126,6 +127,6 @@ class DariusKPlayer implements PlayerInterface
 
     protected function isEmpty($x, $y)
     {
-        return empty($this->table[$x][$y]);
+        return ($this->table[$x][$y] === null);
     }
 }
