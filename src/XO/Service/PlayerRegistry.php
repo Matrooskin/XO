@@ -2,6 +2,7 @@
 
 namespace XO\Service;
 
+use XO\Player\DariusKPlayer;
 use XO\Player\DrunkPlayer;
 use XO\Player\PlayerInterface;
 
@@ -59,6 +60,7 @@ class PlayerRegistry
         $instance = new self;
 
         $instance->setPlayer('Drunk player', new DrunkPlayer());
+        $instance->setPlayer('DariusK', new DariusKPlayer());
 
         return $instance;
     }
